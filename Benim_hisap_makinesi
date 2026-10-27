@@ -1,0 +1,13 @@
+import streamlit as st
+
+st.title("Advanced Calculator")
+st.write("welcome! Enter any mathematical expression you want:")
+
+ifade = st.text_input("Enter your Calculation:", "")
+
+if st.button("Calculate"):
+    try:
+        sonuc = eval(ifade)
+        st.success(f"Result: {sonuc}")
+    except Exception as e:
+        st.error("Error: Please enter a valid expression!")
